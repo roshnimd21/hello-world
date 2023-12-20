@@ -16,6 +16,12 @@ pipeline {
           }
         }
 
+        stage('question') {
+          steps {
+            echo 'Are you interested to use jenkins pipeline'
+          }
+        }
+
       }
     }
 
