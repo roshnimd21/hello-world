@@ -1,10 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('') {
-      steps {
-        echo 'Hello there.!'
-        sh 'echo "How are you?"'
+    stage('error') {
+      parallel {
+        stage('Greet') {
+          steps {
+            echo 'Hello there.!'
+            sh 'echo "How are you?"'
+          }
+        }
+
+        stage('Thank you') {
+          steps {
+            echo 'Thank you for using jenkins pipelines'
+          }
+        }
+
       }
     }
 
